@@ -78,9 +78,9 @@
 
         public void UpdatePosition(double minutesToAdvance)
         {
-            double hours = minutesToAdvance / 60.0;
-            double milesMoved = SpeedInMilesPerHour * hours;
-            double milesToTower = Position.Distance;
+            var hours = minutesToAdvance / 60.0;
+            var milesMoved = SpeedInMilesPerHour * hours;
+            var milesToTower = Position.Distance;
             if (Direction == DirectionOfApproach.Approaching)
             {
                 milesToTower -= milesMoved;
@@ -94,8 +94,8 @@
             {
                 milesToTower += milesMoved;
             }
-            PolarPoint3D newPosition = new PolarPoint3D(
-            milesToTower, Position.Angle, Position.Altitude);
+
+            var newPosition = new PolarPoint3D(milesToTower, Position.Angle, Position.Altitude);
 
             Position = newPosition;
         }
@@ -106,26 +106,26 @@
     {
         static void Main(string[] args)
         {
-            Plane someBoeing777 = new Plane("BA0049")
+            var someBoeing777 = new Plane("BA0049")
             {
                 Direction = DirectionOfApproach.Approaching,
                 SpeedInMilesPerHour = 150
             };
-            Console.WriteLine(
-            "Your plane has identifier {0}," +
-            " and is traveling at {1:0.00}mph [{2:0.00}kph]",
+
+            Console.WriteLine("Your plane has identifier {0}, and is traveling at {1:0.00}mph [{2:0.00}kph]",
             // Use the property getter
             someBoeing777.Identifier,
             someBoeing777.SpeedInMilesPerHour,
             someBoeing777.SpeedInKilometersPerHour);
+
             someBoeing777.SpeedInKilometersPerHour = 140.0;
-            Console.WriteLine(
-            "Your plane has identifier {0}," +
-            " and is traveling at {1:0.00}mph [{2:0.00}kph]",
+
+            Console.WriteLine("Your plane has identifier {0}, and is traveling at {1:0.00}mph [{2:0.00}kph]",
             // Use the property getter
             someBoeing777.Identifier,
             someBoeing777.SpeedInMilesPerHour,
             someBoeing777.SpeedInKilometersPerHour);
+
             Console.ReadKey();
         }
 
