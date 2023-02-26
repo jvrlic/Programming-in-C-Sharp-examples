@@ -22,7 +22,7 @@
 
         static void Main(string[] args)
         {
-            string raceStatus = args[3];
+            var raceStatus = args[3];
             switch (raceStatus)
             {
                 case "YellowFlag":
