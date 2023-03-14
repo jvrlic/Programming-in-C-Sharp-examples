@@ -15,8 +15,10 @@
 
         static void Main(string[] args)
         {
+            var doubleValue = 1.2d;
 
             MyMethod(127, thirdHere: "New third parameter");
+            MyMethod(127, thirdHere: "New third parameter", secondInLine: doubleValue);
         }
     }
 }

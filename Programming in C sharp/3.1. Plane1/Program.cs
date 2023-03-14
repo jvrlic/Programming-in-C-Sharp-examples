@@ -2,7 +2,7 @@
 {
     class Plane
     {
-        public string? Identifier { get; set; }
+        public string Identifier { get; set; }
     }
 
     class Program

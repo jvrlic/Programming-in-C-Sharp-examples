@@ -21,13 +21,15 @@
         {
             get
             {
-                return SpeedInMilesPerHour * 1.609344;
+                return SpeedInMilesPerHour * coef;
             }
             set
             {
-                SpeedInMilesPerHour = value / 1.609344;
+                SpeedInMilesPerHour = value / coef;
             }
         }
+
+        private double coef = 1.609344;
     }
 
     class Program
