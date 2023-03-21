@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _5._04.Problem4
+namespace _5._04._Problem4
 {
     class ProductionDeptTool1
     {

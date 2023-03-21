@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _5._05.Problem5
+namespace _5._05._Problem5
 {
     class DocumentProcessor
     {
@@ -13,22 +13,23 @@ namespace _5._05.Problem5
             //public DocumentProcess Action { get; set; }
             public Action<Document> Action { get; set; }
 
-            public Check QuickCheck { get; set;}
+            public Check? QuickCheck { get; set; }
             //public Predicate<Document> QuickCheck { get; set; }
         }
-        private readonly List<ActionCheckPair> processes = new List<ActionCheckPair>();
+        //private readonly List<ActionCheckPair> processes = new List<ActionCheckPair>();
+        private readonly List<ActionCheckPair> processes = new();
 
-        public LogTextProvider LogTextProvider
+        public LogTextProvider? LogTextProvider
         {
             get;
             set;
         }
 
-        public void AddProcess (Action<Document> action)
+        public void AddProcess(Action<Document> action)
         {
             AddProcess(action, null);
         }
-        public void AddProcess(Action<Document> action, Check quickCheck)
+        public void AddProcess(Action<Document> action, Check? quickCheck)
         {
             processes.Add(new ActionCheckPair { Action = action, QuickCheck = quickCheck });
         }
@@ -39,7 +40,7 @@ namespace _5._05.Problem5
 
         public void Process(Document doc)
         {
-            ProcessEventArgs e = new ProcessEventArgs(doc);
+            var e = new ProcessEventArgs(doc);
             OnProcessing(e);
 
             // First time, do the quick check
@@ -70,10 +71,11 @@ namespace _5._05.Problem5
         }
         private void OnProcessing(ProcessEventArgs e)
         {
-            if (Processing != null)
-            {
-                Processing(this, e);
-            }
+            //if (Processing != null)
+            //{
+            //    Processing(this, e);
+            //}
+            Processing?.Invoke(this, e);
         }
         private void OnProcessed(ProcessEventArgs e)
         {

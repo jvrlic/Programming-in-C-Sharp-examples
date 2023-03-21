@@ -5,11 +5,11 @@
 
         static DocumentProcessor Configure()
         {
-            DocumentProcessor rc = new DocumentProcessor();
+            var rc = new DocumentProcessor();
             rc.AddProcess(DocumentProcesses.TranslateIntoFrench,
                 delegate (Document doc)
                 {
-                    return !doc.Text.Contains("?");
+                    return !doc.Text.Contains('?');
                 });
             rc.AddProcess(DocumentProcesses.Spellcheck);
             rc.AddProcess(DocumentProcesses.Repaginate);
@@ -19,35 +19,35 @@
 
         static void Main(string[] args)
         {
-            Document doc1 = new Document
+            var doc1 = new Document
             {
                 Author = "Matthew Adams",
                 DocumentDate = new DateTime(2000, 01, 01),
                 Text = "Am I a year early?"
             };
-            Document doc2 = new Document
+            var doc2 = new Document
             {
                 Author = "Ian Griffiths",
                 DocumentDate = new DateTime(2001, 01, 01),
                 Text = "This is the new millennium, I promise you."
             };
-            Document doc3 = new Document
+            var doc3 = new Document
             {
                 Author = "Matthew Adams",
                 DocumentDate = new DateTime(2002, 01, 01),
                 Text = "Another year, another document."
             };
 
-            string documentBeingProcessed = null;
+            var documentBeingProcessed = "unknown Document";
 
-            DocumentProcessor processor = Configure();
+            var processor = Configure();
             processor.LogTextProvider = (Document => documentBeingProcessed);
 
 
 
-            ProductionDeptTool1 tool1 = new ProductionDeptTool1();
+            var tool1 = new ProductionDeptTool1();
             tool1.Subscribe(processor);
-            ProductionDeptTool2 tool2 = new ProductionDeptTool2();
+            var tool2 = new ProductionDeptTool2();
             tool2.Subscribe(processor);
 
 

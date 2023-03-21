@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _5._03.Problem3
+namespace _5._03._Problem3
 {
     delegate void DocumentProcess(Document doc);
 

@@ -5,7 +5,7 @@
         /*
         static DocumentProcessor Configure()
         {
-            DocumentProcessor rc = new DocumentProcessor();
+            var rc = new DocumentProcessor();
             rc.Processes.Add(new DocumentProcess(DocumentProcesses.TranslateIntoFrench));
             rc.Processes.Add(new DocumentProcess(DocumentProcesses.Spellcheck));
             rc.Processes.Add(new DocumentProcess(DocumentProcesses.Repaginate));
@@ -15,7 +15,7 @@
 
         static DocumentProcessor Configure()
         {
-            DocumentProcessor rc = new DocumentProcessor();
+            var rc = new DocumentProcessor();
             rc.Processes.Add(DocumentProcesses.TranslateIntoFrench);
             rc.Processes.Add(DocumentProcesses.Spellcheck);
             rc.Processes.Add(DocumentProcesses.Repaginate);
@@ -25,20 +25,20 @@
 
         static void Main(string[] args)
         {
-            Document doc1 = new Document
+            var doc1 = new Document
             {
                 Author = "Matthew Adams",
                 DocumentDate = new DateTime(2000, 01, 01),
                 Text = "Am I a year early?"
             };
-            Document doc2 = new Document
+            var doc2 = new Document
             {
                 Author = "Ian Griffiths",
                 DocumentDate = new DateTime(2001, 01, 01),
                 Text = "This is the new millennium, I promise you."
             };
 
-            DocumentProcessor processor = Configure();
+            var processor = Configure();
             Console.WriteLine("Processing document 1");
             processor.Process(doc1);
             Console.WriteLine();

@@ -120,6 +120,8 @@
     {
         static void Main(string[] args)
         {
+            var joe = new Firefighter();
+            joe.ExtinguishFire
             Firefighter bill = new TraineeFirefighter { Name = "Bill" };
             bill.ExtinguishFire();
         }

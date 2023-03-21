@@ -122,11 +122,15 @@
     {
         static void Main(string[] args)
         {
-            Firefighter joe = new Firefighter { Name = "Joe" };
+            var joe = new Firefighter { Name = "Joe" };
             Firefighter bill = new TraineeFirefighter { Name = "Bill" };
             bill.ExtinguishFire();
             Firefighter pero = new FireChief { Name = "Pero" };
             pero.ExtinguishFire();
+
+            Object o = pero;
+
+            FireChief fc = (FireChief)o;
         }
     }
 }

@@ -8,10 +8,20 @@
         }
     }
 
+    class Person : INamedPerson
+    {
+        public string Name
+        {
+            get;
+            set;
+        } 
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
+            INamedPerson p = new Person() { Name = "Pero" };
         }
     }
 }

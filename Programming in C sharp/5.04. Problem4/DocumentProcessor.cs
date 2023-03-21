@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _5._04.Problem4
+namespace _5._04._Problem4
 {
     class DocumentProcessor
     {
         class ActionCheckPair
         {
-            //public DocumentProcess Action { get; set; }
-            public Action<Document> Action { get; set; }
+            public DocumentProcess Action { get; set; }
+            //public Action<Document> Action { get; set; }
 
             public Check QuickCheck { get; set;}
             //public Predicate<Document> QuickCheck { get; set; }
@@ -33,11 +33,11 @@ namespace _5._04.Problem4
             set;
         }
 
-        public void AddProcess (Action<Document> action)
+        public void AddProcess (DocumentProcess action)
         {
             AddProcess(action, null);
         }
-        public void AddProcess(Action<Document> action, Check quickCheck)
+        public void AddProcess(DocumentProcess action, Check quickCheck)
         {
             processes.Add(new ActionCheckPair { Action = action, QuickCheck = quickCheck });
         }

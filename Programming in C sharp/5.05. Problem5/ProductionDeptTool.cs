@@ -11,18 +11,18 @@ namespace _5._05._Problem5
         public void Subscribe(DocumentProcessor processor)
         {
             processor.Processing += Processor_Processing;
-            processor.Processed += processor_Processed;
+            processor.Processed += Processor_Processed;
         }
         public void Unsubscribe(DocumentProcessor processor)
         {
             processor.Processing -= Processor_Processing;
-            processor.Processed -= processor_Processed;
+            processor.Processed -= Processor_Processed;
         }
         void Processor_Processing(object sender, EventArgs e)
         {
             Console.WriteLine("Tool1 has seen processing.");
         }
-        void processor_Processed(object sender, EventArgs e)
+        void Processor_Processed(object sender, EventArgs e)
         {
             Console.WriteLine("Tool1 has seen that processing is complete.");
         }

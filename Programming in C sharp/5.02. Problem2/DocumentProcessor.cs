@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _5._02.Problem2
+namespace _5._02._Problem2
 {
     class DocumentProcessor
     {
@@ -18,7 +18,7 @@ namespace _5._02.Problem2
         }
         public void Process(Document doc)
         {
-            foreach (DocumentProcess process in Processes)
+            foreach (var process in Processes)
             {
                 process.Process(doc);
             }

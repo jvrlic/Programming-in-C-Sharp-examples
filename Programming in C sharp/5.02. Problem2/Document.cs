@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _5._02.Problem2
+namespace _5._02._Problem2
 {
     public sealed class Document
     {
