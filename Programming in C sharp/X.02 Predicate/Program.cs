@@ -22,10 +22,21 @@
         }
     }
 
+    class Point
+    {
+        public Point(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
+
+        public int X { get; set; }
+        public int Y { get; set; }
+    }
 
     class Program
     {
-        private static bool FindPoints(System.Drawing.Point obj)
+        private static bool FindPoints(Point obj)
         {
             return obj.X * obj.Y > 100000;
         }
@@ -49,7 +60,11 @@
             foreach (var team in teams.FindAll(x => x.Founded <= foundedBeforeYear))
                 Console.WriteLine("{0}: {1}", team.Name, team.Founded);
 
-            /*
+            teams.FindAll(x => x.Founded <= foundedBeforeYear)
+                .ForEach(x => Console.WriteLine("{0}: {1}", x.Name, x.Founded));
+
+
+            
             // Create an array of Point structures.
             Point[] points = { new Point(100, 200), 
                          new Point(150, 250), new Point(250, 375), 
@@ -60,12 +75,12 @@
 
             // Find the first Point structure for which X times Y   
             // is greater than 100000. 
-            Point first = Array.Find(points, predicate);
+            var first = Array.Find(points, predicate);
             //Point first = Array.Find(points, x => x.X * x.Y > 100000);
 
             // Display the first structure found.
             Console.WriteLine("Found: X = {0}, Y = {1}", first.X, first.Y);          
-            */
+            
         }
     }
 }

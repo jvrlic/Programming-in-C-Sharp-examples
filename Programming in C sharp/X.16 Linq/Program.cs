@@ -28,8 +28,6 @@
 
         static void Main(string[] args)
         {
-
-
             IEnumerable<Student> studentQuery =
                 from student in students
                 where student.Scores[0] > 90

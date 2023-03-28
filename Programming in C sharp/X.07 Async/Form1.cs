@@ -15,14 +15,13 @@ namespace X._007.Async
         public Form1()
         {
             InitializeComponent();
-            /*
+            
             button1.Click += async (sender, e) =>
             {
                 // ExampleMethodAsync returns a Task.
                 await ExampleMethodAsync();
                 textBox1.Text += "\r\nControl returned to Click event handler.\r\n";
             };
-             * */
 
         }
 

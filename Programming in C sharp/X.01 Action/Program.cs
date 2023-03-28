@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        //delegate void DisplayMessage(string message);
+        delegate void DisplayMessage(string message);
 
 
         private static void ShowWindowsMessage(string message)
@@ -17,14 +17,14 @@
 
         static void Main(string[] args)
         {
-            //DisplayMessage messageTarget;
+            DisplayMessage messageTarget1;
             Action<string> messageTarget;
 
             if (Environment.GetCommandLineArgs().Length > 1)
             {
                 messageTarget = ShowWindowsMessage;
-                //messageTarget = delegate(string s) { ShowWindowsMessage(s); };
-                // messageTarget = s => ShowWindowsMessage(s);
+                messageTarget = delegate(string s) { ShowWindowsMessage(s); };
+                messageTarget = s => ShowWindowsMessage(s);
             }
             else
             {
